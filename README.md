@@ -11,6 +11,9 @@ BareMetal file system.
 The BareMetal-OS philosophy aligns with k - it's only 16KB and does just enough.
 It provides raw access to ethernet and disk and everything runs in ring 0.
 
+If you proceed to the following section, you will be building the OS and k and
+running it on the bochs emulator or booting k from a hard disk.
+
 ## just tell me what to do
 ### make a directory to play in
 ```
