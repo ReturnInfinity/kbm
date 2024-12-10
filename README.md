@@ -53,7 +53,7 @@ make bochs  # will emulate BareMetal running k
     * you will see a `<bochs>` prompt
  - at the prompt, type `c` to continue
     * bochs starts emulation and in a few seconds the window will let you interact with k
- - to quit, switch back to the console and `^C`
+ - to quit, switch back to the console and type ctrl-c
  - enter `q` to quit the emulation
 
 ## if you want to run it on hardware
