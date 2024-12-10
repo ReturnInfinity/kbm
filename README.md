@@ -12,7 +12,7 @@ The BareMetal-OS philosophy aligns with k - it's only 16KB and does just enough.
 It provides raw access to ethernet and disk and everything runs in ring 0.
 
 ## just tell me what to do
- - make a directory to play in
+### make a directory to play in
 ```
 mkdir sandbox; cd sandbox
 ```
@@ -23,10 +23,10 @@ sudo apt-get install nasm gcc git mtools
 git clone https://github.com/ReturnInfinity/BareMetal-OS.git
 cd BareMetal-OS && ./baremetal.sh setup && cd ..
 ```
-If you want to run k on hardware, skip to [build k](#build-k).
+If you want to copy k to hard disk and boot that disk, skip to [build k](#build-k).
 But you probably want to emulate hardware, so build bochs, a pc emulator that supports avx512.
 
- - build bochs 2.8
+### build bochs 2.8
 ```
 # optionally,  sudo apt-get install libgtk-3-dev  for bochs gui debugger
 wget https://sourceforge.net/projects/bochs/files/bochs/2.8/bochs-2.8.tar.gz
@@ -37,15 +37,16 @@ make
 sudo make install
 cd ..
 ``` 
- - build k
+### build k
 ```
 sudo apt-get install clang nasm
 git clone https://github.com/ReturnInfinity/kbm.git
 cd kbm
 make
 ```
-If you want to run k on hardware, skip to [hardware](#if-you-want-to-run-it-on-hardware)
+If you want to copy k to hard disk and boot that disk, skip to [if you want to run it on hardware](#if-you-want-to-run-it-on-hardware)
 
+### run k in bochs
 now `make bochs` will start the bochs emulator.
  - choose menu item `6` to start
     * after a few seconds, a window will appear
@@ -56,7 +57,7 @@ now `make bochs` will start the bochs emulator.
  - to quit, switch back to the console and type ctrl-c
  - enter `q` to quit the emulation
 
-## if you want to run it on hardware
+### if you want to run it on hardware
 > [!CAUTION]
 > Doublecheck that you are writing the disk image to the correct disk
 
