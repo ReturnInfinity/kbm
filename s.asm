@@ -6,7 +6,7 @@
 ; -----------------------------------------------------------------------------
 ; b_k -- BareMetal Linux syscall API for k
 global b_k
-extern input_read
+extern b_read
 b_k:
 	cmp ax, 0
 	je b_k_read_stdin
@@ -15,7 +15,7 @@ b_k:
 	mov rax,$-1
 	ret
 b_k_read_stdin:
-	call input_read
+	call b_read
 	ret
 b_k_write_stdout:
 	push rcx

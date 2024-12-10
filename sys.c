@@ -17,14 +17,12 @@ static char b_in(void) {
   b_output(&c,1);
   return c;
 }}
-long input_read(long fd,char*s,long n) {
- if(n<1)return 0;
- long i=0;
- for(;i<n-1;i++) {
+u64 b_read(long fd,char*s,u64 n) {
+ u64 i=0;
+ for(;i<n;i++) {
   char c=b_in();
   s[i]=c;
   if(c=='\n') break;
  }
- s[i+1]=0;
  return i;
 }
