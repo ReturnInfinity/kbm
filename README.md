@@ -17,7 +17,7 @@ It provides raw access to ethernet and disk and everything runs in ring 0.
 mkdir sandbox; cd sandbox
 ```
 The following instructions assume you're on a Debian based system. `apt-get install` means install package, so you can translate that to your system.
- - build BareMetal-OS
+### build BareMetal-OS
 ```
 sudo apt-get install nasm gcc git mtools
 git clone https://github.com/ReturnInfinity/BareMetal-OS.git
