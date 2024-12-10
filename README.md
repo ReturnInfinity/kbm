@@ -48,8 +48,7 @@ If you want to copy k to hard disk and boot that disk, skip to [if you want to r
 
 ### run k in bochs
 now `make bochs` will start the bochs emulator.
- - choose menu item `6` to start
-    * after a few seconds, a window will appear
+ - after a few seconds, a window will appear
  - switch back to the console
     * you will see a `<bochs>` prompt
  - at the prompt, type `c` to continue

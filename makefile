@@ -20,7 +20,7 @@ $(img):sys.o a.o z.o s.o
 	objcopy -O binary k $(app)
 	cd $B && ./baremetal.sh k.app
 bochs:$(img)
-	bochs -n -q boot:disk ata0-master:type=disk,path=$(img) cpu:model=sapphire_rapids megs:1200
+	bochs -qf /dev/null boot:disk ata0-master:type=disk,path=$(img) cpu:model=sapphire_rapids megs:1200 || true
 disasm:
 	objdump -drwC -Mintel -S k | less
 clean:
