@@ -54,8 +54,7 @@ now `make bochs` will start the bochs emulator.
     * you will see a `<bochs>` prompt
  - at the prompt, type `c` to continue
     * bochs starts emulation and in a few seconds the window will let you interact with k
- - to quit, switch back to the console and type ctrl-c
- - enter `q` to quit the emulation
+ - to quit, exit k with \\\\
 
 ### if you want to run it on hardware
 > [!CAUTION]
