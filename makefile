@@ -24,4 +24,4 @@ bochs:$(img)
 disasm:
 	objdump -drwC -Mintel -S k | less
 clean:
-	rm -rf k *.o *.s $(img) $(app) ?.[ch] z.k bochsrc #ksrc
+	rm -rf k *.o *.s $(img) $(app) ?.[ch] z.k bochsrc
