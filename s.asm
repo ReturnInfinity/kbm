@@ -5,6 +5,7 @@
 
 ; -----------------------------------------------------------------------------
 ; b_k -- BareMetal Linux syscall API for k
+%include 'api/libBareMetal.asm'
 global b_k
 extern b_read
 b_k:
@@ -12,6 +13,8 @@ b_k:
 	je b_k_read_stdin
 	cmp ax, 1
 	je b_k_write_stdout
+	cmp ax, 60
+	je b_k_exit
 	mov rax,$-1
 	ret
 b_k_read_stdin:
@@ -23,5 +26,9 @@ b_k_write_stdout:
 	call [0x00100018]		; b_output
 	pop rcx
 	mov rax, rdx
+	ret
+b_k_exit:
+	mov rcx, SHUTDOWN
+	call [b_system]
 	ret
 ;-----------------------------------------------------------------------------

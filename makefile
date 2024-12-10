@@ -14,7 +14,7 @@ _.h: makefile
 z.c:_.h
 a.c:_.h
 s.o:s.asm
-	nasm -f elf64 s.asm
+	nasm -f elf64 s.asm -I$B/src/BareMetal
 $(img):sys.o a.o z.o s.o
 	ld -T app.ld $l sys.o a.o z.o s.o -o k
 	objcopy -O binary k $(app)
