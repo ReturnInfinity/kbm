@@ -23,8 +23,8 @@ sudo apt-get install nasm gcc git mtools
 git clone https://github.com/ReturnInfinity/BareMetal-OS.git
 cd BareMetal-OS && ./baremetal.sh setup && cd ..
 ```
-unless you want to copy k and BareMetal to a hard disk and boot it, you will want
-to install bochs, a pc emulator that supports avx512.
+If you want to run k on hardware, skip to [build k](#build-k).
+But you probably want to emulate hardware, so build bochs, a pc emulator that supports avx512.
 
  - build bochs 2.8
 ```
@@ -43,10 +43,10 @@ sudo apt-get install clang nasm
 git clone https://github.com/ReturnInfinity/kbm.git
 cd kbm
 make
-make bochs  # will emulate BareMetal running k
 ```
+If you want to run k on hardware, skip to [hardware](#if-you-want-to-run-it-on-hardware)
 
-`make bochs` will start the bochs emulator.
+now `make bochs` will start the bochs emulator.
  - choose menu item `6` to start
     * after a few seconds, a window will appear
  - switch back to the console
@@ -61,6 +61,6 @@ make bochs  # will emulate BareMetal running k
 > Doublecheck that you are writing the disk image to the correct disk
 
 ```
-dd if=sandbox/BareMetal-OS/sys/baremetal_os.img of=/dev/sdc
+dd if=../sandbox/BareMetal-OS/sys/baremetal_os.img of=/dev/sdc
 ```
 and boot from that disk
