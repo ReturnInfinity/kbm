@@ -9,15 +9,13 @@ img=$B/sys/baremetal_os.img
 app=$B/sys/k.app
 
 all:$(img)
-z.h:makefile
-	#rm -rf ksrc;mkdir -p ksrc;cd ksrc;wget -q shakti.com/edu/k.zip;unzip -q k;
+_.h: makefile
 	cp ksrc/*.[hc] .
-	echo "#define _start _nostart">>z.h
-z.c:z.h
-a.c:z.h
+z.c:_.h
+a.c:_.h
 s.o:s.asm
 	nasm -f elf64 s.asm
-$(img):sys.o a.o z.o s.o makefile
+$(img):sys.o a.o z.o s.o
 	ld -T app.ld $l sys.o a.o z.o s.o -o k
 	objcopy -O binary k $(app)
 	cd $B && ./baremetal.sh k.app
